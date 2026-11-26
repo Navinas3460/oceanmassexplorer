@@ -22,7 +22,7 @@ Effort: S < 1 day, M 1-3 days, L > 3 days (one person).  All open items are feas
     pin + diagram marker (D29).  Fiber hits refined by bisection; Quality setting Fast / Normal / High (D30-D31).
   - Fixes from user testing: picking no longer resets the view (Home key / Reset button instead of double-click); empty start (D32-D33).
   - Hosting: GitHub Pages workflow (builds the data and the app on GitHub, deploys from main) and gzip data files, 341 MB -> 162 MB (D34-D35).
-    Pending on the owner: public repository, Pages source = GitHub Actions, merge into main (steps in README).
+    Live at https://chinmay0303.github.io/oceanmassexplorer/ (deployed 2026-11-26 from main; live scenario tests passed, see log.md; real-GPU and slow-connection checks still open).
  Measured result worth remembering (D31): the fiber-surface detection was already accurate (thin rectangle at 320 steps misses 0.6 %
  of surface pixels versus a 2560-step reference; no false surfaces at a sharp curve kink). Remaining misses come from the step size.
 
@@ -120,4 +120,4 @@ Effort: S < 1 day, M 1-3 days, L > 3 days (one person).  All open items are feas
 ---------------------------------------------------------------------------------
  Answered: Q1 normal user laptops in a browser (R4, R8 matter); Q2 the AND combination is not needed; Q3 deployed publicly on GitHub Pages.
  Open: Q4. Are derived fields (density) or seasonal data wanted at all (R12, R10)?
- Open: Q5. Is the repository public (needed for free GitHub Pages)?
+ Answered: Q5 Pages is enabled and the deployment works.

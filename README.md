@@ -3,23 +3,23 @@
 WebGL2 volume renderer for World Ocean Atlas 2023 temperature, salinity and dissolved oxygen (annual and monthly),
 with a water-mass diagram (T-S, T-O2, S-O2) whose selections (rectangles and curves) extract fiber surfaces in the 3D volume.
 
+**Live app: https://chinmay0303.github.io/oceanmassexplorer/**
+
 ## Open the app (no installation)
 
-The app is a static website on GitHub Pages: https://chinmay0303.github.io/oceanmassexplorer/
+Open the link above. The app is a static website on GitHub Pages, so nothing has to be installed.
 Use a current Chrome, Edge, Firefox or Safari (WebGL2 is required). The first load downloads about 19 MB (annual data);
 choosing Monthly downloads about 150 MB more (all 12 months, kept in the browser's graphics memory, roughly 0.4 GB).
 
-## Publish on GitHub Pages (repository owner, one time)
+## How the site is published
 
-The workflow `.github/workflows/pages.yml` builds the app and the data on GitHub (the data is generated from the public NOAA files,
-not stored in git) and publishes the site.
+The site is already live. Every push to `main` that changes code (not only documentation) is built and published automatically by
+`.github/workflows/pages.yml`: it generates the data from the public NOAA files (not stored in git), builds the app and deploys it.
+A run takes about 2 minutes (a few seconds longer without the cached data). Pushes to other branches only build, without deploying.
+Progress and errors: the Actions tab on GitHub.
 
-1. The repository must be public (GitHub Pages on a private repository needs a paid plan).
-2. On GitHub open Settings, then Pages, and set Source to "GitHub Actions".
-3. Merge the branch `claude/amazing-tesla-1jshar` into `main` (for example with a pull request): the workflow deploys from `main`.
-4. Open the Actions tab and the run "Build and deploy to GitHub Pages". The first run takes 10-20 minutes (it downloads 1.5 GB of NOAA files
-   and compresses the data); later runs reuse the cached data and take a few minutes. When the run is green the site is live at the address above.
-5. Pushes to other branches only build (no deployment), which checks that everything still builds.
+To publish from a fresh repository: make it public (free Pages needs a public repository), set Settings > Pages > Source to "GitHub Actions",
+and push or merge the code into `main`.
 
 ## Development setup
 
